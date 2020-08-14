@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
+
 class ProductPage(BasePage):
     def guest_can_add_to_basket(self):
         button = self.browser.find_element(*ProductPageLocators.BASKET_BUTTON)
@@ -23,3 +24,4 @@ class ProductPage(BasePage):
     def success_message_should_disappear(self):
         assert self.is_disappeared(*ProductPageLocators.CONFIRM_MESSAGE_PRODUCT_NAME), \
             "Success message does not disappear as it should"
+
