@@ -2,27 +2,23 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from .locators import BasePageLocators
+from pages.locators import BasePageLocators
 import math
 
 
 class BasePage:
-    def __init__(self, browser, url):
+    def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
-
-    # def __init__(self, browser, url, timeout=10):
-    #     self.browser = browser
-    #     self.url = url
-    #     self.browser.implicitly_wait(timeout)
+        self.browser.implicitly_wait(timeout)
 
     def go_to_basket_page(self):
         link = self.browser.find_element(*BasePageLocators.BASKET_PAGE_LINK)
         link.click()
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
-        link.click()
+        login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        login_link.click()
 
     def is_disappeared(self, how, what, timeout=4):
         try:
@@ -30,13 +26,12 @@ class BasePage:
                 until_not(EC.presence_of_element_located((how, what)))
         except TimeoutException:
             return False
-
         return True
 
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
-        except (NoSuchElementException):
+        except NoSuchElementException:
             return False
         return True
 
@@ -45,7 +40,6 @@ class BasePage:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
         except TimeoutException:
             return True
-
         return False
 
     def open(self):

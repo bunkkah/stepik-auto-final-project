@@ -8,12 +8,17 @@ class BasePageLocators:
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
+class BasketPageLocators:
+    PRODUCT_IN_BASKET = (By.CSS_SELECTOR, ".basket-items")
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, "#content_inner > p")
+
+
 class LoginPageLocators:
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTRATION_EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
-    REGISTRATION_PASS1_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
-    REGISTRATION_PASS2_FIELD = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_PASSWORD_CONFIRMATION_FIELD = (By.CSS_SELECTOR, "#id_registration-password2")
     REGISTRATION_SUBMIT_BUTTON = (By.NAME, "registration_submit")
 
 
@@ -27,8 +32,3 @@ class ProductPageLocators:
     PRODUCT_PRICE = (By.CSS_SELECTOR, "p.price_color")
     CONFIRM_MESSAGE_PRODUCT_NAME = (By.CSS_SELECTOR, ".alert.alert-safe.alert-noicon.alert-success.fade.in strong")
     CONFIRM_MESSAGE_PRODUCT_PRICE = (By.CSS_SELECTOR, ".alert.alert-safe.alert-noicon.alert-info.fade.in strong")
-
-
-class BasketPageLocators:
-    PRODUCT_IN_BASKET = (By.CSS_SELECTOR, ".basket-items")
-    BASKET_EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner > p")
