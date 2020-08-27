@@ -16,11 +16,11 @@ In "requirements.txt" file, besides pytest and selenium packages, there are some
 
 Before running the tests, please make sure that you:
 - have created and activated new virtual environment, 
+- are in 'stepik-auto-final-project' folder,
 - installed all the necessary packages 
     ```
     pip install -r requirements.txt
     ```
-- are in 'stepik-auto-final-project' folder.
 
 If something goes wrong while running the tests, please consider this (Rostislav, thanks!):
 https://stepik.org/lesson/201964/step/15?discussion=1413148&unit=176022
