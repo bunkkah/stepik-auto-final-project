@@ -1,7 +1,9 @@
-# stepik-auto-final-project
+stepik-auto-final-project
+This repository contains the final project of the autotests course at Stepik: https://stepik.org/course/575
 
-This repository contains the final project of the autotests course at Stepik
+Disclaimer
+Please make sure that you have the latest version of chromedriver to run tests in your latest Chrome. It can be downloaded here: https://chromedriver.chromium.org/
 
-https://stepik.org/course/575
+I used Python 3.8.1 on Windows 10x64, but tried to avoid nice f-strings constructions in case of reviewer uses some earlier version of Python which doesn't support it.
 
-Please make sure you have the latest chromedriver version to run test in your latest Chrome.
+In "requirements.txt" file, besides pytest and selenium packages, there are some others which got there automatically after "pip freeze > requirements.txt".
